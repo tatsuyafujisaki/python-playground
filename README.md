@@ -5,7 +5,6 @@ def flatten(outer_list):
 
 
 xs = [["a", "b"], ["c"], ["d", "e"]]
-
 print(flatten(xs))  # ['a', 'b', 'c', 'd', 'e']
 ```
 
