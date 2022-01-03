@@ -10,6 +10,18 @@ def is_tens_minute_even():
     return is_even(get_tens_minute())
 
 
+def add_hashtags(xs):
+    return [f"#{x}" for x in xs]
+
+
+def get_hashtags():
+    return " OR ".join(add_hashtags(read_lines("hashtags.txt")))
+
+
+def get_evil_accounts():
+    return " ".join([f"-from:{x}" for x in read_lines("evil-accounts.txt")])
+
+
 def read_lines(filename):
     with open(get_absolute_path(filename)) as f:
         return [line.strip() for line in f.readlines()]
