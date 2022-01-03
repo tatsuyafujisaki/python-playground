@@ -10,9 +10,14 @@ def is_tens_minute_even():
     return is_even(get_tens_minute())
 
 
+def read_lines(filename):
+    with open(get_absolute_path(filename)) as f:
+        return [line.strip() for line in f.readlines()]
+
+    
 def read_file(filename):
     with open(get_absolute_path(filename)) as f:
-        return f.read()
+        return f.read().strip()
 
 
 def write_file(filename, s):
