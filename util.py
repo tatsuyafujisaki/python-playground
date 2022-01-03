@@ -8,3 +8,10 @@ def is_even(n):
 
 def is_tens_minute_even():
     return is_even(get_tens_minute())
+
+
+def rewrite_file(filename, func):
+    with open(get_absolute_path(filename), "r+") as f:
+        s = func(f.read())
+        f.seek(0)
+        f.write(s)
