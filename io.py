@@ -32,6 +32,20 @@ def rewrite_file(filename, func):
 # Twitter
 #
 
+def get_absolute_path(filename):
+    return os.path.join(os.path.dirname(__file__), filename)
+
+
 def read_hashtags():
     with open(get_absolute_path("hashtags.txt")) as f:
         return " OR ".join(["#" + line.strip() for line in f.readlines()])
+
+
+def read_negative_hashtags():
+    with open(get_absolute_path("negative-hashtags.txt")) as f:
+        return " ".join(["-#" + line.strip() for line in f.readlines()])
+
+
+def read_negative_accounts():
+    with open(get_absolute_path("negative-accounts.txt")) as f:
+        return " ".join(["-from:" + line.strip() for line in f.readlines()])
