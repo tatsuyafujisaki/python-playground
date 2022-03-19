@@ -26,3 +26,19 @@ def rewrite_file(filename, func):
         s = func(f.read())
         f.seek(0)
         f.write(s)
+
+
+#
+# Twitter
+#
+
+def add_hashtags(xs):
+    return [f"#{x}" for x in xs]
+
+
+def join_or(xs):
+    return " OR ".join(xs)
+
+
+def get_hashtags():
+    return join_or(add_hashtags(read_lines("hashtags.txt")))
