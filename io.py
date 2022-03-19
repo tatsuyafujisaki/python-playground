@@ -1,5 +1,18 @@
+# Usage: open_file("input.txt")
+def get_absolute_path(filename):
+    return os.path.join(os.path.dirname(__file__), filename)
+
+
+# Usage: open_file("input.txt")
+def open_file(filename):
+    with open(filename) as f:
+        lines = [line.strip() for line in f.readlines()]
+        return " ".join(lines)
+
+
+# Usage: read_lines("input.txt")
 def read_lines(filename):
-    with open(get_absolute_path(filename)) as f:
+    with open(filename) as f:
         return [line.strip() for line in f.readlines()]
 
     
