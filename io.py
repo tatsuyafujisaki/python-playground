@@ -1,3 +1,6 @@
+from requests import Response
+
+
 def get_absolute_path(filename):
     return os.path.join(os.path.dirname(__file__), filename)
 
@@ -29,8 +32,18 @@ def rewrite_file(filename, func):
 
 
 #
+# Print
+#
+
+
+def print_json(response: Response):
+    print(response.json.dumps(response.json(), indent=2, sort_keys=True))
+
+
+#
 # Twitter
 #
+
 
 def get_absolute_path(filename):
     return os.path.join(os.path.dirname(__file__), filename)
