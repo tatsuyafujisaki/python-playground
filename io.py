@@ -1,3 +1,5 @@
+import json
+
 from requests import Response
 
 
@@ -37,7 +39,7 @@ def rewrite_file(filename, func):
 
 
 def print_json(response: Response):
-    print(response.json.dumps(response.json(), indent=2, sort_keys=True))
+    print(json.dumps(response.json(), indent=2, sort_keys=True))
 
 
 #
